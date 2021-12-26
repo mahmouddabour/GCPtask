@@ -1,14 +1,14 @@
 project_id = "helical-sanctum-336021"
-network_name = "dabourvpc"
+network_name = "dabourvpc3"
 subnets = [
     {
-      subnet_name   = "subnet-01"
-      subnet_ip     = "10.10.10.0/24"
+      subnet_name   = "subnet-05"
+      subnet_ip     = "10.10.0.0/16"
       subnet_region = "us-central1"
-    } ]
+    }     ]
 
-dataset_id =  ["bigquerydataset1","bigquerydataset2","bigquerydataset3"]  //,"bigquerydataset2","bigquerydataset3"
-dataset_name = ["bigquerydataset1","bigquerydataset2","bigquerydataset3"]  //,"bigquerydataset2","bigquerydataset3"
+dataset_id =  ["bigquerydataset11","bigquerydataset21","bigquerydataset31"]  //,"bigquerydataset2","bigquerydataset3"
+dataset_name =["bigquerydataset11","bigquerydataset21","bigquerydataset31"]
 bucket_name = ["1","2","3"]
 gcp_service_list = [
 #  "bigquery-json.googleapis.com",     # BigQuery API
@@ -34,6 +34,10 @@ gcp_service_list = [
 
 //GKE Input _______________________
 region = "us-central1"
-zones                      = ["us-central1-a", "us-central1-b"]
+zones                      = ["us-central1-c", "us-central1-f"]
 
+//subnetwork = module.subnets.subnet_name[0]
+//ip_range_pods = "subnet-01-pods-02"
+//ip_range_services = "subnet-01-services-01"
+compute_engine_service_account = "terraform@helical-sanctum-336021.iam.gserviceaccount.com"
 //GKE End _______________

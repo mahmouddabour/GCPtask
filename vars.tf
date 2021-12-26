@@ -60,19 +60,26 @@ variable "zones" {
   description = "The zone to host the cluster in (required if is a zonal cluster)"
 }
 
-# variable "subnetwork" {
-#   description = "The subnetwork to host the cluster in"
-# }
+variable "subnetwork" {
+  description = "The subnetwork created to host the cluster in"
+  default     = "subnet-05"
+}
 
-# variable "ip_range_pods" {
-#   description = "The secondary ip range to use for pods"
-# }
+variable "ip_range_pods_name" {
+  description = "The secondary ip range to use for pods"
+  default     = "ip-range-pods"
+}
 
-# variable "ip_range_services" {
-#   description = "The secondary ip range to use for services"
-# }
+variable "ip_range_services_name" {
+  description = "The secondary ip range to use for services"
+  default     = "ip-range-scv"
+}
 
-# variable "compute_engine_service_account" {
-#   description = "Service account to associate to the nodes in the cluster"
-# }
+variable "compute_engine_service_account" {
+  description = "Service account to associate to the nodes in the cluster"
+}
+variable "cluster_name" {
+  description = "The name for the GKE cluster"
+  default     = "vpc-cluster"
+}
 //___________________________
