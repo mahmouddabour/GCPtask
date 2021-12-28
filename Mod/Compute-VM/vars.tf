@@ -18,16 +18,16 @@ variable "project_id" {
   description = "The project ID to host the cluster in"
 }
 
-variable "cluster_name_suffix" {
-  description = "A suffix to append to the default cluster name"
-  default     = ""
+variable "VMnameprefix" {
+  description = "vm name prefix"
+  default     = "Private so far"
 }
 
-variable "region" {
-  description = "The region to host the cluster in"
+variable "tags" {
+  description = "tags"
 }
 
-variable "zones" {
+variable "zone" {
   type        = list(string)
   description = "The zone to host the cluster in (required if is a zonal cluster)"
 }
@@ -40,12 +40,20 @@ variable "subnetwork" {
   description = "The subnetwork to host the cluster in"
 }
 
-variable "ip_range_pods" {
-  description = "The secondary ip range to use for pods"
+variable "machine_type" {
+  description = "machine type"
 }
-
-variable "ip_range_services" {
-  description = "The secondary ip range to use for services"
+variable "size" {
+  description = "VM size"
+}
+variable "type" {
+  description = "VM boot disk type"
+}
+variable "image" {
+  description = "VM boot disk image"
+}
+variable "metadata_startup_script" {
+  description = "startup script"
 }
 
 variable "compute_engine_service_account" {

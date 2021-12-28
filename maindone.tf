@@ -65,3 +65,9 @@ for_each = toset(var.bucket_name)
   # }]
   depends_on = [google_project_service.project]
 }
+
+module "VM" {
+  source = "./Mod/Compute-VM"
+  
+  
+}
