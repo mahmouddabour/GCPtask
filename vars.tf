@@ -57,10 +57,10 @@ variable "zones" {
   description = "The zone to host the cluster in (required if is a zonal cluster)"
 }
 
-variable "subnetwork" {
-  description = "The subnetwork created to host the cluster in"
-  default     = "subnet-05"
-}
+# variable "subnetwork" {
+#   description = "The subnetwork created to host the cluster in"
+#   default     = var.subnets[0].subnet_name
+# }
 
 variable "ip_range_pods_name" {
   description = "The secondary ip range to use for pods"

@@ -1,7 +1,7 @@
 provider "google" {
   project     = var.project_id
   region      = "us-central1"
-  credentials = "keys/helical-sanctum-336021-02afbfbca9bb.json"
+  credentials = "keys/precise-plane-336505-b88adfd9f073.json"
 }
 
 provider "kubernetes" {

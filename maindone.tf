@@ -17,7 +17,7 @@ module "subnets" {
   subnets          = var.subnets  
   //secondary_ranges = var.secondary_ranges
    secondary_ranges = {
-    (var.subnetwork) = [
+    (var.subnets[0].subnet_name) = [
       {
         range_name    = var.ip_range_pods_name
         ip_cidr_range = "192.168.0.0/18"
@@ -45,9 +45,6 @@ for_each = toset(var.dataset_name)
   dataset_name = each.key
   dataset_id = each.key
 
-
-
-
 depends_on = [google_project_service.project]
 }
 
@@ -66,8 +63,8 @@ for_each = toset(var.bucket_name)
   depends_on = [google_project_service.project]
 }
 
-module "VM" {
-  source = "./Mod/Compute-VM"
+# module "VM" {
+#   source = "./Mod/Compute-VM"
   
   
-}
+# }

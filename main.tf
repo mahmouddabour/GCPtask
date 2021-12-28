@@ -188,10 +188,12 @@ locals {
 }
 data "google_client_config" "default" {}
 data "google_compute_subnetwork" "subnetwork" {
-  name       = var.subnetwork
+  name       = var.subnets[0].subnet_name
   project    = var.project_id
   region     = var.region
+  
   depends_on = [module.subnets]
+
  
 }
 
@@ -204,7 +206,7 @@ module "gke" {
   zones      = slice(var.zones, 0, 1)
 
   network                 = module.vpc.network_name
-  subnetwork              = var.subnetwork
+  subnetwork              = data.google_compute_subnetwork.subnetwork.name
   ip_range_pods           = var.ip_range_pods_name
   ip_range_services       = var.ip_range_services_name
   create_service_account  = true

@@ -1,10 +1,11 @@
-project_id = "helical-sanctum-336021"
-network_name = "dabourvpc3"
+project_id = "precise-plane-336505"
+network_name = "dabourvpc"
 subnets = [
     {
       subnet_name   = "subnet-05"
       subnet_ip     = "10.10.0.0/16"
       subnet_region = "us-central1"
+
     }     ]
 
 dataset_id =  ["bigquerydataset11","bigquerydataset21","bigquerydataset31"]  //,"bigquerydataset2","bigquerydataset3"
@@ -36,8 +37,8 @@ gcp_service_list = [
 region = "us-central1"
 zones                      = ["us-central1-c", "us-central1-f"]
 
-//subnetwork = module.subnets.subnet_name[0]
+//subnetwork = 
 //ip_range_pods = "subnet-01-pods-02"
 //ip_range_services = "subnet-01-services-01"
-compute_engine_service_account = "terraform@helical-sanctum-336021.iam.gserviceaccount.com"
+compute_engine_service_account = "terraform@precise-plane-336505.iam.gserviceaccount.com"
 //GKE End _______________
